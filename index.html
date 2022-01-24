@@ -477,7 +477,7 @@
                             success: (treeStr) => {
                                 JSON.parse(treeStr).tree.forEach(item => {
                                     if (item.path.indexOf(this.projectInfo.dirPath) === 0 && item.type !== 'tree') { //  // 过滤特定数组 不是树节点，只收集文件
-                                        item.absoluteUrl = `https://github.com/${this.projectInfo.ownerName}/${this.projectInfo.projectName}/${this.projectInfo.branchName}/${item.path}?raw=true`
+                                        item.absoluteUrl = `https://github.com/${this.projectInfo.ownerName}/${this.projectInfo.projectName}/blob/${this.projectInfo.branchName}/${item.path}?raw=true`
                                         // `https://raw.githubusercontent.com/${this.projectInfo.ownerName}/${this.projectInfo.projectName}/${this.projectInfo.branchName}/${item.path}`
                                         item.status = '' // 待下载状态
                                         this.fileInfoList.push(item) // 收集
